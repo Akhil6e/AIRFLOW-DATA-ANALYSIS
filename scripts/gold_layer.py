@@ -8,7 +8,8 @@ def run_gold_layer(**context):
         task_ids="silver_transform"
     )
 
-    
+    if not silver_file:
+        raise ValueError("Silver file path not found in XCom")
     df = pd.read_csv(silver_file)
 
     
